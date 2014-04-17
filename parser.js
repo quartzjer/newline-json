@@ -27,9 +27,9 @@ Parser.prototype._transform = function(chunk, encoding, cb) {
     try {
       var obj = JSON.parse(line);
       this.push(obj);
-    } catch (er) {
+    } catch (err) {
       var context = lines.slice(l).join('\n')+'\n'+this._buffer;
-      er = new Error(er.message+' in '+JSON.stringify(context));
+      er = new Error(err.message+' in '+JSON.stringify(context));
       this.emit('error', er);
       return;
     }
@@ -43,8 +43,8 @@ Parser.prototype._flush = function(cb) {
     try {
       var obj = JSON.parse(rem);
       this.push(obj);
-    } catch (er) {
-      this.emit('error', er);
+    } catch (err) {
+      this.emit('error', err);
       return;
     }
   }
