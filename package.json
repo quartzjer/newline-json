@@ -1,6 +1,6 @@
 {
   "name": "newline-json",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "New-line separated JSON streaming",
   "main": "index.js",
   "scripts": {
@@ -18,10 +18,9 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "tap": "~0.4.4",
-    "stream2buffer": "0.0.3"
+    "tap": "~0.4.8"
   },
   "dependencies": {
-    "readable-stream": "~1.1.10"
+    "stream2buffer": "0.0.4"
   }
 }

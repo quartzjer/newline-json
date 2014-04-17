@@ -4,9 +4,11 @@ Just like [JSONStream](https://github.com/dominictarr/JSONStream),
 but instead of streaming valid JSON arrays, it streams new-line separated
 JSON objects.
 
+**It requires browserify 3.x from 0.1 upwards, versions 0.0.x are compatible with browserify 2.x.**
+
 ## Example
 
-If you have a readable stream like 
+If you have a readable stream like
 
 ```js
 var n = 100;

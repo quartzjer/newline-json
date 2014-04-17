@@ -1,9 +1,6 @@
 var util = require('util');
 var Transform = require('stream').Transform;
-if (!Transform)
-  Transform = require('readable-stream').Transform; // for browsers and node pre-0.10
 util.inherits(Stringifier, Transform);
-
 
 function Stringifier(options) {
   if (!options)
