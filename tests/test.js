@@ -14,13 +14,13 @@ test('the mock readable stream works', function (t) {
     t.equal(buffer.split(/\n/).length, 101, 'has 100 lines/objects');
     expectedFinalBuffer = buffer;
     t.end();
-  })
+  });
 });
 
 test('parses and stringifies', function (t) {
   var parser = new Parser();
   var nsjrs = readable();
-  nsjrs.pipe(parser)
+  nsjrs.pipe(parser);
 
   var parsedLines = 0;
   parser.on('data', function (data) {
@@ -51,4 +51,13 @@ test('parse produces useful error messages', function (t) {
     t.end();
   });
   parser.write('"one"\n"day"\nError:\nhere\nbe\nstack');
+});
+
+test('converts nulls and undefineds to false', function (t) {
+  var parser = new Parser();
+  parser.on('data', function (data) {
+    t.ok(data === false);
+    t.end();
+  });
+  parser.write('null\n');
 });

@@ -24,7 +24,7 @@ Parser.prototype._transform = function(chunk, encoding, cb) {
     var line = lines[l];
     try {
       var obj = JSON.parse(line);
-      this.push(obj);
+      this.push((obj === null || obj === undefined) ? false : obj);
     } catch (err) {
       var context = lines.slice(l).join('\n')+'\n'+this._buffer;
       er = new Error(err.message+' in '+JSON.stringify(context));
