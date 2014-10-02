@@ -54,3 +54,7 @@ and IMO if you don't need to parse complex object paths, then you'd be better of
 using a new-line separated JSON. Also, it's probably much easier to write parsers
 like this in other languages and environments, which is good if your stack is
 not 100% node.js.
+
+## It's a thing
+
+So apparently newline json is now a thing, even has a [wikipedia page](http://en.wikipedia.org/wiki/Line_Delimited_JSON) and a [spec](https://github.com/ndjson/ndjson-spec).
