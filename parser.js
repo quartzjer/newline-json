@@ -28,8 +28,7 @@ Parser.prototype._transform = function(chunk, encoding, cb) {
     } catch (err) {
       var context = lines.slice(l).join('\n')+'\n'+this._buffer;
       er = new Error(err.message+' in '+JSON.stringify(context));
-      this.emit('error', er);
-      return;
+      this.emit('parse-error', er);
     }
   }
   cb();
